@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
+
+OWT Theme, built using the Underscores theme from Automattic.
+
 _s
 ===
 
