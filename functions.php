@@ -6,7 +6,7 @@
  *
  * @package owt
  */
-
+ 
 if ( ! function_exists( 'owt_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
