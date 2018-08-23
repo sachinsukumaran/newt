@@ -21,11 +21,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div id="page" class="site container">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'owt' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
+	<header id="masthead" class="site-header row">
+		<div class="site-branding col-md-5" style="border:1px solid #000">
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
@@ -44,14 +44,27 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'owt' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
+		<nav class="navbar navbar-expand-md navbar-light bg-light col-md-7" role="navigation">
+		  <div class="container">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+		        <?php
+		        wp_nav_menu( array(
+								'menu'    => 'primary',
+		            'theme_location'    => 'primary',
+		            'depth'             => 2,
+		            'container'         => 'div',
+		            'container_class'   => 'collapse navbar-collapse',
+		            'container_id'      => 'bs-example-navbar-collapse-1',
+		            'menu_class'        => 'nav navbar-nav',
+		            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+		            'walker'            => new WP_Bootstrap_Navwalker()
+							));
+		        ?>
+		    </div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

@@ -44,7 +44,7 @@ if ( ! function_exists( 'owt_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'owt' ),
+			'primary' => esc_html__( 'Primary', 'owt' ),
 		) );
 
 		/*
@@ -124,6 +124,8 @@ function owt_scripts() {
 
 	wp_enqueue_style( 'owt-style', get_stylesheet_uri() );
 
+  wp_enqueue_script( 'owt_bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '20180823', true );
+  wp_enqueue_script( 'owt_scrolltop_js', get_template_directory_uri() . '/js/scroll-top.js', array( 'jquery' ), '20180823', true );
 	wp_enqueue_script( 'owt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'owt-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -153,6 +155,11 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Bootstrap Navwalker addition - Sachin.
+ */
+require get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 /**
  * Load Jetpack compatibility file.
