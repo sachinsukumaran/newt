@@ -133,8 +133,10 @@
 }
 
 //Scroll to top
-.top .top:link {
-  color: #333;
+.top, .top:link {
+  background-color: #ffa500;
+  color: #000;
+  border-radius:5px;
   position:fixed;
   z-index: 999;
   bottom: 20px;
@@ -150,8 +152,9 @@
   border: none;
 }
 
-.top:hover{
-  border: none;
+.top:hover, .top:link:hover{
+  background-color: transparent;
+  border: 2px solid #ffa500;
   opacity: 1;
   text-decoration: none;
 }
