@@ -6,7 +6,7 @@
  *
  * @package owt
  */
- 
+
 if ( ! function_exists( 'owt_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -120,6 +120,8 @@ add_action( 'widgets_init', 'owt_widgets_init' );
  * Enqueue scripts and styles.
  */
 function owt_scripts() {
+  wp_enqueue_style( 'owt_bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css' );
+
 	wp_enqueue_style( 'owt-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'owt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
