@@ -1,0 +1,88 @@
+#masthead{
+  margin:0;
+  padding:0;
+}
+.site{
+  margin:0;
+  padding:0;
+}
+
+.site-header{
+  padding: 0px;
+  background-color: rgba(0,0,0,0.3);
+}
+.site-title{
+  font-weight:bold;
+  font-family: $font__type1;
+  font-size: 20px;
+}
+.site-title a, .site-title a:visited {
+  text-decoration:none;
+  color:#000;
+}
+
+.site-description{
+  font-family: $font__type2;
+  font-size: 14px;
+}
+.site-text-branding{
+  margin-top:auto;
+  margin-bottom:auto;
+  padding: 25px 0;
+}
+.site-logo{
+  margin-top:auto;
+  margin-bottom: auto;
+}
+@media (max-width: 414px) {
+  .site-logo img{
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .site-text-branding{
+    text-align:center;
+  }
+  .site-logo{
+    text-align: center;
+  }
+  .site-logo img{
+    text-align: center;
+  }
+}
+
+/* Hero Section */
+.site-hero{
+  padding: 30px 0;
+}
+.hero-title{
+  padding-top:50px;
+  padding-bottom: 30px;
+  font-family: $font__type1;
+  font-size: 72px;
+  font-weight:bold;
+  color:#fff;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+.hero-text{
+  font-family: $font__type2;
+  font-style: italic;
+  font-size: 24px;
+  color:#fff;
+  line-height: 1.5;
+  padding: 10px 10px 10px 20px;
+  border-left: 3px solid #1aa3dc;
+  border-right: 3px solid #1aa3dc;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,0.3);
+}
+.hero-form{
+  background-color: rgba(1,1,1,0.3);
+  padding: 5px 10px;
+  border-radius:4px;
+}
+.hero-form ~ .wpforms-title {
+  font-family: $font__type2;
+  font-style: italic;
+}

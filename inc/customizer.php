@@ -25,6 +25,33 @@ function owt_customize_register( $wp_customize ) {
 			'render_callback' => 'owt_customize_partial_blogdescription',
 		) );
 	}
+	/* Added for testing panel
+			$wp_customize->add_panel('some_panel',array(
+			    'title'=>'Panel1',
+			    'description'=> 'This is panel Description',
+			    'priority'=> 10,
+			));
+
+
+			$wp_customize->add_section('section',array(
+			    'title'=>'section',
+			    'priority'=>10,
+			    'panel'=>'some_panel',
+			));
+
+
+			$wp_customize->add_setting('setting_demo',array(
+			    'default'=>'a',
+			));
+
+
+			$wp_customize->add_control('contrl_demo',array(
+			    'label'=>'Text',
+			    'type'=>'text',
+			    'section'=>'section',
+			    'settings'=>'setting_demo',
+			));
+	*/
 }
 add_action( 'customize_register', 'owt_customize_register' );
 

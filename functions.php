@@ -74,8 +74,8 @@ if ( ! function_exists( 'owt_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 100,
+			'width'       => 400,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -121,8 +121,9 @@ add_action( 'widgets_init', 'owt_widgets_init' );
  */
 function owt_scripts() {
   wp_enqueue_style( 'owt_bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css' );
-
 	wp_enqueue_style( 'owt-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans|Poppins', false );
+
 
   wp_enqueue_script( 'owt_bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '20180823', true );
   wp_enqueue_script( 'owt_scrolltop_js', get_template_directory_uri() . '/js/scroll-top.js', array( 'jquery' ), '20180823', true );
@@ -174,3 +175,59 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Load setup file for Cherry V
+ */
+/*
+add_action( 'after_setup_theme', require( get_template_directory() . '/cherry-framework/setup.php' ), 0 );
+add_action( 'after_setup_theme', 'owt_core', 1);
+function owt_core(){
+  global $chery_core_version;
+  static $core = null;
+  if( null !== $core ){
+    return $core;
+  }
+  if( 0 < sizeof( $chery_core_version ) ){
+      $core_paths = array_values( $chery_core_version );
+      require_once( $core_paths[0] );
+  } else {
+    die ( 'Class Cherry_Core not found' );
+  }
+  $core = new Cherry_Core( array(
+      'base_dir'  => get_template_directory() . '/cherry-framework',
+      'base_url'  => get_template_directory_uri() . '/cherry-framework',
+      'modules'   => array(
+        'cherry-js-core'  => array(
+          'autoload'  => false,
+        ),
+        'cherry-interface-builder'  => array(
+          'autoload'  => false,
+        ),
+        'cherry-widget-factory'  => array(
+          'autoload'  => true,
+        ),
+        'cherry-customizer'  => array(
+          'autoload'  => false,
+        ),
+        'cherry-dynamic-css'  => array(
+          'autoload'  => false,
+        ),
+        'cherry-google-fonts-loader'  => array(
+          'autoload'  => false,
+        ),
+        'cherry-term-meta'  => array(
+          'autoload'  => false,
+        ),
+        'cherry-post-meta'  => array(
+          'autoload'  => false,
+        ),
+        'cherry-breadcrumbs'  => array(
+          'autoload'  => false,
+        ),
+      ),
+    ));
+
+    return $core;
+}
+*/
