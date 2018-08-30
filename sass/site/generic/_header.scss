@@ -2,8 +2,9 @@
     overflow-x: hidden; /* fix for horizontal padding due to container-fluid */
 }
 .contact-banner{
-  background-color: rgba(0,0,0,0.4);
+  background-color: $color__site-blue;
   padding: 10px 0px;
+  color: $color__site-white;
 }
 .contact-details{
   font-family: $font__type1;
@@ -27,8 +28,8 @@
 
 .site-header{
   padding: 0px;
-  background-color: rgba(3,3,3,0.3);
-
+  background-color: $color__site-white;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .site-title{
   font-weight:bold;

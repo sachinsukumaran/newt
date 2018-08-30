@@ -8,7 +8,9 @@
  *
  * @package owt
  */
-
+/*
+	This header file will have a hero header which cannot be modified by Elementor (yet).
+*/
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -36,7 +38,7 @@
 	$address = get_option('contact_address');
 	$email = get_option('contact_email');
 ?>
-<header id="masthead">
+<header id="masthead" style="background:url(<?php echo $header_image;?>) no-repeat fixed center;background-size:cover;">
 <!-- Contact Header -->
 <div id="#contact-banner" class="contact-banner container-fluid">
 	<div class="row">
@@ -114,7 +116,7 @@
 	<div class="row">
 		<div class="col-md-1"></div>
 		<div class="col-md-4">
-			<?php //if(is_front_page() && is_home()): ?>
+			<?php if(is_front_page() && is_home()): ?>
 				<div class="row site-text-branding">
 					<div class="site-logo col-md-5">
 						<?php if(!empty($owt_logo_image)){ ?>
@@ -131,7 +133,7 @@
 						<div class="site-description"><?php echo $owt_description; /* WPCS: xss ok. */ ?></div>
 					</div>
 				</div>
-			<?php //endif;?>
+			<?php endif;?>
 		</div><!-- Logo and Branding -->
 
 			<nav class="navbar navbar-expand-md navbar-light bg-faded col-md-7" role="navigation">
@@ -161,6 +163,24 @@
 <?php
 	}
 ?>
+<!-- Site Hero -->
+<div id="site-hero" class="site-hero container">
+	<div class="row">
+		<div class="col-md-9">
+			<p class="hero-title">
+				Think Positive<br>
+				Attitude Is Everything
+			</p>
+			<p class="hero-text">
+				You can live an amazing life, free from what is holding you down or holding you back. Be advised, you will be surprised by the big difference you will experience in your life!  Yes, we are here to help.
+			</p>
+		</div>
+		<div class="col-md-3 hero-form">
+			<?php wpforms_display( '1734', true );?>
+		</div>
+	</div>
+</div>
+<!-- Site Hero -->
 </header><!-- Header -->
 
 
