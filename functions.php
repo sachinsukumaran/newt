@@ -222,6 +222,9 @@ require_once get_template_directory() . '/inc/require-plugins.php';
 /* Custom Post Types */
 require_once get_template_directory() . '/inc/post-types.php';
 
+/* Elementor Controls */
+//require_once get_template_directory() . '/inc/builder/builder.php';
+
 /**
  * Load setup file for Cherry V
  */
